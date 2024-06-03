@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { NavbarLogo } from ".";
 
 type MenuItem = {
   title: string;
@@ -71,15 +72,7 @@ const MainNavbar = () => {
         ],
       }}
     >
-      <NavbarContent justify="center">
-        <NavbarBrand className="gap-1">
-          <Image src="/logo.webp" alt="logo" width="70" height="70" />
-          <h1 className={`text-foreground text-2xl ${scheherazade.className}`}>
-            MARÍA LORENCEZ
-          </h1>
-        </NavbarBrand>
-      </NavbarContent>
-
+      <NavbarLogo />
       <NavbarContent justify="end" className="hidden lg:flex uppercase">
         {menuItems.map((item, index) => (
           <NavbarItem

@@ -6,7 +6,10 @@ import { montserrat } from "../fonts";
 import Favicon from "/public/favicon.ico";
 import { HashScrollProvider } from "@context";
 import "./globals.css";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
+import "yet-another-react-lightbox/plugins/counter.css";
 
 export const metadata: Metadata = {
   title: "María Lorencez",

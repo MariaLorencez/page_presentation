@@ -25,6 +25,7 @@
       "@schemas/*": ["src/schemas/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@lib/*": ["src/lib/*"],
+      "@store/*": ["src/store/*"],
       "@fonts": ["src/fonts"],
       "@context": ["src/context"]
     }

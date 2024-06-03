@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import React from "react";
 
 const Cases = () => {
@@ -23,9 +23,16 @@ const Cases = () => {
               de estas personas.
             </p>
             <div>
-              <Button variant="ghost" color="secondary">
+              <Button
+                variant="ghost"
+                color="secondary"
+                as={Link}
+                href="/files/CDS ENSAYO Preliminar Ecuador.pdf"
+                target="_blank"
+              >
                 Descarga el estudio preliminar
               </Button>
+             
             </div>
           </div>
         </div>
