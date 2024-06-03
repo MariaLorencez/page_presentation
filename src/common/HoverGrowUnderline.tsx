@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from "react";
 
-interface HoverGrowUnderlineProps extends PropsWithChildren {
+interface Props extends PropsWithChildren {
   underlineColor?: string;
 }
 
-const HoverGrowUnderline: React.FC<HoverGrowUnderlineProps> = ({
+const HoverGrowUnderline: React.FC<Props> = ({
   children,
   underlineColor = "bg-primary-400",
 }) => {

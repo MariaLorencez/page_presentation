@@ -1,15 +1,10 @@
 "use client";
+import { IItemExperience } from "@interfaces/IItemExperience";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import React, { FC, ReactNode } from "react";
-
-interface ItemExperience {
-  title: ReactNode;
-  img: string;
-  description: string;
-}
+import React, { FC } from "react";
 
 interface Props {
-  items: ItemExperience[];
+  items: IItemExperience[];
   alt: string;
 }
 

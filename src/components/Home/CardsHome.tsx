@@ -58,7 +58,7 @@ const CardsHome = () => {
                 href={item.link}
                 variant="light"
                 color="primary"
-                startContent={<BiShowAlt size={"lg"} />}
+                startContent={<BiShowAlt size="2em" />}
               >
                 Ver más
               </Button>

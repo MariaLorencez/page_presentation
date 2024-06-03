@@ -1,14 +1,9 @@
+import { IItemStage } from "@interfaces/IItemStage";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import React, { FC } from "react";
 
-interface ItemStage {
-  title: string;
-  img: string;
-  description: string;
-}
-
 interface Props {
-  items: ItemStage[];
+  items: IItemStage[];
   alt: string;
 }
 
@@ -28,7 +23,9 @@ const CardsStages: FC<Props> = ({ items, alt }) => {
               src={item.img}
             />
             <div className="m-4">
-              <div className="w-100 mb-4 text-center font-bold">{item.title}</div>
+              <div className="w-100 mb-4 text-center font-bold">
+                {item.title}
+              </div>
               <p className="mb-4">{item.description}</p>
             </div>
           </CardBody>

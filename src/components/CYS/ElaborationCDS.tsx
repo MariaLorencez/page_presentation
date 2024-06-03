@@ -13,6 +13,7 @@ const ElaborationCDS = () => {
         <div className="px-14 lg:px-56">
           <iframe
             className="w-full aspect-video shadow-lg"
+            title="YouTube video player"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

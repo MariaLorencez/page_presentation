@@ -1,24 +1,7 @@
-import { ISong } from "@interfaces/ISong";
-import create from "zustand";
+import { IMusicPlayerState } from "@interfaces/IMusicPlayerState";
+import { create } from "zustand";
 
-interface MusicPlayerState {
-  songs: ISong[];
-  currentSongIndex: number;
-  isPlaying: boolean;
-  played: number;
-  durations: number[];
-  isRepeat: boolean;
-  isShuffle: boolean;
-  setCurrentSongIndex: (index: number) => void;
-  setIsPlaying: (isPlaying: boolean) => void;
-  setPlayed: (played: number) => void;
-  setDurations: (durations: number[]) => void;
-  setDurationAtIndex: (duration: number, index: number) => void;
-  setIsRepeat: (isRepeat: boolean) => void;
-  setIsShuffle: (isShuffle: boolean) => void;
-}
-
-const useMusicPlayerStore = create<MusicPlayerState>((set) => ({
+const useMusicPlayerStore = create<IMusicPlayerState>((set) => ({
   songs: [
     {
       title: "Arena y mar",
@@ -45,18 +28,50 @@ const useMusicPlayerStore = create<MusicPlayerState>((set) => ({
   durations: [],
   isRepeat: false,
   isShuffle: false,
+  isHydrated: false,
   setCurrentSongIndex: (index) => set({ currentSongIndex: index }),
   setIsPlaying: (isPlaying) => set({ isPlaying }),
   setPlayed: (played) => set({ played }),
   setDurations: (durations) => set({ durations }),
-  setDurationAtIndex: (duration, index) =>
+  setIsHydrated: () => set({ isPlaying: false, isHydrated: true }),
+  handlePlayPause: () => set((state) => ({ isPlaying: !state.isPlaying })),
+  handleNext: () =>
+    set((state) => {
+      const { isShuffle, currentSongIndex, songs } = state;
+      let nextIndex;
+      if (isShuffle) {
+        do {
+          nextIndex = Math.floor(Math.random() * songs.length);
+        } while (nextIndex === currentSongIndex);
+      } else {
+        nextIndex = (currentSongIndex + 1) % songs.length;
+      }
+      return {
+        currentSongIndex: nextIndex,
+        played: 0,
+        isPlaying: true,
+      };
+    }),
+  handlePrevious: () =>
+    set((state) => {
+      const { currentSongIndex, songs } = state;
+      const prevIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      return {
+        currentSongIndex: prevIndex,
+        played: 0, // Reset played time
+        isPlaying: true,
+      };
+    }),
+  toggleRepeat: () => set((state) => ({ isRepeat: !state.isRepeat })),
+  toggleShuffle: () => set((state) => ({ isShuffle: !state.isShuffle })),
+  handleProgress: (state: { playedSeconds: number }) =>
+    set({ played: state.playedSeconds }),
+  handleDuration: (duration: number, index: number) =>
     set((state) => {
       const newDurations = [...state.durations];
       newDurations[index] = duration;
       return { durations: newDurations };
     }),
-  setIsRepeat: (isRepeat) => set({ isRepeat }),
-  setIsShuffle: (isShuffle) => set({ isShuffle }),
 }));
 
 export default useMusicPlayerStore;
