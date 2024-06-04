@@ -24,7 +24,7 @@ const HomeExperience = () => {
           Una marca fuerte conecta de forma profunda con el ser. Por medio de
           experiencias musicales, se puede lograr ésta conexión.
         </p>
-        <div className="px-28">
+        <div className="px-8">
           <CardsHome />
         </div>
       </div>

@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-player iframe {
+    border-radius: 10px; /* Ajusta el valor según tus necesidades */
+  }
+  

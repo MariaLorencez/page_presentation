@@ -1,7 +1,7 @@
 "use client";
-import { Card, CardBody, Slider, Image, Button } from "@nextui-org/react";
+import { Card, CardBody, Slider, Button } from "@nextui-org/react";
 import { formatTime } from "@utils/formatTime";
-import React, { useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import {
   FaRedo,
   FaStepBackward,
@@ -13,7 +13,7 @@ import {
 import ReactPlayer from "react-player";
 import useMusicPlayerStore from "@store/musicPlayer";
 
-const Player = () => {
+const Player: FC = () => {
   const {
     songs,
     currentSongIndex,
@@ -31,9 +31,14 @@ const Player = () => {
     handleDuration,
     setPlayed,
     setIsPlaying,
+    updateSongImages,
   } = useMusicPlayerStore();
 
   const playerRef = useRef<ReactPlayer | null>(null);
+
+  useEffect(() => {
+    updateSongImages();
+  }, [updateSongImages]);
 
   const handleSliderChange = (value: number | number[]) => {
     const newValue = Array.isArray(value) ? value[0] : value;
@@ -53,7 +58,7 @@ const Player = () => {
   };
 
   return (
-    <div className="col-span-12 lg:col-span-6 flex justify-center p-4">
+    <div className="col-span-12 lg:col-span-8 flex justify-center p-4">
       <Card
         isBlurred
         className="border-none bg-background/60 dark:bg-default-100/50 w-full"
@@ -62,21 +67,25 @@ const Player = () => {
       >
         <CardBody className="p-4 h-full flex flex-col justify-between">
           <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center h-full">
-            <div className="relative col-span-6 md:col-span-4 h-full">
-              <Image
-                alt={`Album cover ${currentSongIndex + 1}`}
-                className="object-cover"
-                classNames={{
-                  img: "h-full",
-                  wrapper: "h-full",
-                }}
-                shadow="md"
-                src={songs[currentSongIndex].image}
+            <div className="relative col-span-6 md:col-span-5 h-full rounded-lg">
+              <ReactPlayer
+                ref={playerRef}
+                className="react-player" // Añade una clase personalizada aquí
+                url={songs[currentSongIndex].src}
+                playing={isPlaying}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={handleEnded}
+                onProgress={handleProgress}
+                onDuration={(duration) =>
+                  handleDuration(duration, currentSongIndex)
+                }
                 width="100%"
+                height="100%"
               />
             </div>
 
-            <div className="flex flex-col col-span-6 md:col-span-8">
+            <div className="flex flex-col col-span-6 md:col-span-7">
               <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-0">
                   <h1 className="text-large font-medium mt-2">
@@ -179,18 +188,6 @@ const Player = () => {
               </div>
             </div>
           </div>
-          <ReactPlayer
-            ref={playerRef}
-            url={songs[currentSongIndex].src}
-            playing={isPlaying}
-            onEnded={handleEnded}
-            onProgress={handleProgress}
-            onDuration={(duration) =>
-              handleDuration(duration, currentSongIndex)
-            }
-            width="0"
-            height="0"
-          />
         </CardBody>
       </Card>
     </div>

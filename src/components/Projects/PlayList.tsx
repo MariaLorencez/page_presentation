@@ -5,9 +5,9 @@ import { formatTime } from "@utils/formatTime";
 const PlayList = () => {
   const { songs, durations, setCurrentSongIndex, setIsPlaying, setPlayed } =
     useMusicPlayerStore();
- 
+
   return (
-    <div className="col-span-12 lg:col-span-6 flex justify-center p-4">
+    <div className="col-span-12 lg:col-span-4 flex justify-center p-4">
       <Card
         isBlurred
         className="border-none bg-background/60 dark:bg-default-100/50 w-full"
@@ -23,15 +23,7 @@ const PlayList = () => {
             {songs.map((song, index) => (
               <ListboxItem
                 key={index}
-                className="mb-2"
-                textValue={song.title}
-                onPress={() => {
-                  setCurrentSongIndex(index);
-                  setPlayed(0); // Reset played time
-                  setIsPlaying(true);
-                }}
-              >
-                <div className="flex items-center gap-2">
+                startContent={
                   <Image
                     alt={`Album cover ${index + 1}`}
                     className="object-cover"
@@ -40,15 +32,19 @@ const PlayList = () => {
                     width={50}
                     src={song.image}
                   />
-                  <div className="flex justify-between w-full">
-                    <div>
-                      <span className="font-bold">{song.title}</span>
-                      <br />
-                      <span>{song.subtitle}</span>
-                    </div>
-                    <span>{formatTime(durations[index])}</span>
-                  </div>
-                </div>
+                }
+                endContent={formatTime(durations[index])}
+                className="mb-2"
+                textValue={song.title}
+                onPress={() => {
+                  setCurrentSongIndex(index);
+                  setPlayed(0); // Reset played time
+                  setIsPlaying(true);
+                }}
+              >
+                <span className="font-bold">{song.title}</span>
+                <br />
+                <span>{song.subtitle}</span>
               </ListboxItem>
             ))}
           </Listbox>

@@ -1,5 +1,14 @@
+const pad = (value: number) => {
+  return ("0" + value).slice(-2);
+};
+
 export const formatTime = (seconds: number): string => {
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  const date = new Date(seconds * 1000);
+  const hh = date.getUTCHours();
+  const mm = date.getUTCMinutes();
+  const ss = pad(date.getUTCSeconds());
+  if (hh) {
+    return `${hh}:${pad(mm)}:${ss}`;
+  }
+  return `${mm}:${ss}`;
 };

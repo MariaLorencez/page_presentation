@@ -6,20 +6,21 @@ import { PlayList, Player } from ".";
 import { Skeleton } from "@nextui-org/react";
 
 const MusicPlayer: React.FC = () => {
-  const { songs, isHydrated, setIsHydrated, handleDuration } =
+  const { songs, isHydrated, setIsHydrated, handleDuration, setDurations } =
     useMusicPlayerStore();
 
   useEffect(() => {
     setIsHydrated();
-  }, [setIsHydrated]);
+    setDurations();
+  }, [setDurations, setIsHydrated]);
 
   if (!isHydrated) {
     return (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start justify-center py-4">
-        <Skeleton className="rounded-lg col-span-12 lg:col-span-6">
+        <Skeleton className="rounded-lg col-span-12 lg:col-span-8">
           <div className="h-[200px] rounded-lg bg-default-300"></div>
         </Skeleton>
-        <Skeleton className="rounded-lg col-span-12 lg:col-span-6">
+        <Skeleton className="rounded-lg col-span-12 lg:col-span-4">
           <div className="h-[200px] rounded-lg bg-default-300"></div>
         </Skeleton>
       </div>
