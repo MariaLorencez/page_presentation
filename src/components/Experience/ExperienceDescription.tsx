@@ -3,7 +3,7 @@ import React from "react";
 const ExperienceDescription = () => {
   return (
     <div
-      className="w-full bg-cover bg-center relative flex items-center justify-center py-28"
+      className="w-full bg-cover bg-center relative flex items-center justify-center py-28 px-4"
       style={{
         backgroundImage: `url('/images/marialorencez.webp')`,
         backgroundPosition: "50% 30%",

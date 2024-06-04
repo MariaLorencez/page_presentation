@@ -67,7 +67,7 @@ const Player: FC = () => {
       >
         <CardBody className="p-4 h-full flex flex-col justify-between">
           <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center h-full">
-            <div className="relative col-span-6 md:col-span-5 h-full rounded-lg">
+            <div className="relative col-span-6 h-full rounded-lg">
               <ReactPlayer
                 ref={playerRef}
                 className="react-player" // Añade una clase personalizada aquí
@@ -81,11 +81,11 @@ const Player: FC = () => {
                   handleDuration(duration, currentSongIndex)
                 }
                 width="100%"
-                height="100%"
+                height="250px"
               />
             </div>
 
-            <div className="flex flex-col col-span-6 md:col-span-7">
+            <div className="flex flex-col col-span-6">
               <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-0">
                   <h1 className="text-large font-medium mt-2">

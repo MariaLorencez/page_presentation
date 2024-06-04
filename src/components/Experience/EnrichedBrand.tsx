@@ -8,7 +8,7 @@ const EnrichedBrand = () => {
   return (
     <Element name="enriched-brand" className="element">
       <div
-        className="flex justify-center w-full bg-cover bg-center relative items-center py-28"
+        className="flex justify-center w-full bg-cover bg-center relative items-center py-28 px-4"
         style={{
           backgroundImage: "url(/images/bg3.webp)",
           backgroundPosition: "50% 50%",
@@ -20,7 +20,7 @@ const EnrichedBrand = () => {
               ¡Tu marca puede enriquecerse!{" "}
             </p>
           </HoverGrowUnderline>
-          <div className="px-28">
+          <div>
             <CardsExperience
               items={[
                 {

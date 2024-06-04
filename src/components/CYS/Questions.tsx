@@ -111,7 +111,7 @@ const Questions = () => {
   const secondColumnQuestions = listQuestions.slice(midIndex);
 
   return (
-    <div className="flex justify-center w-full items-center py-28">
+    <div className="flex justify-center w-full items-center py-28 px-4">
       <div className="container">
         <p className="text-4xl font-bold text-secondary mb-4 text-center">
           Preguntas frecuentes

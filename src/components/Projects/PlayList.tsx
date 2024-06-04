@@ -18,7 +18,7 @@ const PlayList = () => {
           <h2 className="text-xl font-semibold mb-4">Playlist</h2>
           <Listbox
             aria-label="Actions"
-            className="overflow-y-auto max-h-[140px] flex-grow"
+            className="overflow-y-auto max-h-[200px] flex-grow"
           >
             {songs.map((song, index) => (
               <ListboxItem

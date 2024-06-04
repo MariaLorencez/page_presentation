@@ -14,7 +14,7 @@ const ContactProducts = () => {
       <div className="container relative">
         <HoverGrowUnderline underlineColor="bg-primary-500">
           <p className="text-3xl font-bold text-white mb-4 text-center">
-            Contáctanos para seguir los productos
+            Contáctenos para seguir los productos
           </p>
         </HoverGrowUnderline>
         <div className="flex justify-center px-14">

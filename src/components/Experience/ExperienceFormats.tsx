@@ -6,7 +6,7 @@ import { Element } from "react-scroll";
 const ExperienceFormats = () => {
   return (
     <Element name="experience-formats" className="element">
-      <div className="flex justify-center w-full bg-primary-50 brightness-110	items-center py-28">
+      <div className="flex justify-center w-full bg-primary-50 brightness-110	items-center py-28 px-4">
         <div className="container">
           <HoverGrowUnderline underlineColor="bg-primary-500">
             <p className="text-3xl font-bold text-secondary mb-4 text-center">

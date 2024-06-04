@@ -18,7 +18,7 @@ const HomeDescription = () => {
             width={1000}
           />
         </div>
-        <div className="flex flex-col col-span-12 lg:col-span-6 text-center p-8">
+        <div className="flex flex-col col-span-12 lg:col-span-6 text-center px-4 py-8 md:p-8">
           <HoverGrowUnderline underlineColor="bg-secondary">
             <p className="text-3xl font-medium text-white mb-6">
               <Link href="/marialorencez#composer">Compositora</Link>

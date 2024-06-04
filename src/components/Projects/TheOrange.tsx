@@ -16,7 +16,7 @@ const TheOrange = () => {
             isBlurred
           />
         </div>
-        <div className="flex flex-col col-span-12 lg:col-span-6 px-8 pb-28 pt-0 lg:pt-28 text-white">
+        <div className="flex flex-col col-span-12 lg:col-span-6 px-4 pb-28 pt-0 lg:pt-28 text-white">
           <p className="text-4xl font-medium mb-6">El Naranjo</p>
           <p className="text-2xl font-medium mb-6">(2022)</p>
           <p className="text-xl mb-6">

@@ -2,7 +2,7 @@ import React from "react";
 
 const BellSuitePhrase = () => {
   return (
-    <div className="flex justify-center w-full bg-cover bg-center relative items-center py-28">
+    <div className="flex justify-center w-full bg-cover bg-center relative items-center py-28 px-4">
       <div className="container relative">
         <p className="text-2xl mb-8 text-center">
           &quot;

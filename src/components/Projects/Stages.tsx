@@ -5,7 +5,7 @@ import { CardsStages } from ".";
 const Stages = () => {
   return (
     <div
-      className="flex justify-center w-full bg-cover bg-center relative items-center py-28"
+      className="flex justify-center w-full bg-cover bg-center relative items-center py-28 px-4"
       style={{
         backgroundImage: "url(/images/bg3.webp)",
         backgroundPosition: "50% 50%",
@@ -17,7 +17,7 @@ const Stages = () => {
             Etapas
           </p>
         </HoverGrowUnderline>
-        <div className="px-28">
+        <div>
           <CardsStages
             items={[
               {

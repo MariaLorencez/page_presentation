@@ -19,7 +19,7 @@ const KnowMore = () => {
   } = useDisclosure();
 
   return (
-    <div className="flex justify-center w-full bg-primary items-center py-28">
+    <div className="flex justify-center w-full bg-primary items-center py-28 px-4">
       <div className="container">
         <HoverGrowUnderline underlineColor="bg-secondary">
           <p className="text-5xl font-bold text-white mb-4 text-center">

@@ -11,7 +11,7 @@ const BellSuiteDescription = () => {
       }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center justify-center">
-        <div className="col-span-12 lg:col-span-6 px-8 pt-28 pb-0 lg:py-28 flex justify-center">
+        <div className="col-span-12 lg:col-span-6 px-4 pt-28 pb-0 lg:py-28 flex justify-center">
           <Image
             src="/images/bell-suite.webp"
             alt="on-earth"

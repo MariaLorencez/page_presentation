@@ -28,7 +28,7 @@ const UsePatentsModal: FC<Props> = ({ isOpen, onOpenChange }) => {
             <ModalBody className="text-center">
               <div className="py-7 flex flex-col gap-4">
                 <p>
-                  Uso de dioxido de cloro en las bolsas de sangre -{" "}
+                  Uso de dióxido de cloro en las bolsas de sangre -{" "}
                   <Link href={""} target="_blank" className="text-primary">
                     Descarga aquí
                   </Link>

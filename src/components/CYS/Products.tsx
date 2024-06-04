@@ -3,7 +3,7 @@ import { ProductItem } from ".";
 
 const Products = () => {
   return (
-    <div className="flex justify-center items-center p-28">
+    <div className="flex justify-center items-center py-28 px-4">
       <div className="container">
         <HoverGrowUnderline underlineColor="bg-primary-500">
           <p className="text-3xl font-bold text-secondary mb-4 text-center">

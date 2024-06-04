@@ -8,7 +8,7 @@ const ComposerProducer = () => {
   return (
     <Element name="composer" className="element">
       <div className="flex justify-center">
-        <div className="container text-center flex flex-col gap-8 py-8">
+        <div className="container text-center flex flex-col gap-8 py-8 px-4">
           <HoverGrowUnderline underlineColor="bg-primary-500">
             <p className="text-3xl font-bold text-primary mb-4 text-center">
               Compositora y productora

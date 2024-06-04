@@ -6,7 +6,7 @@ const Cases = () => {
     <div className="max-w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div
-          className="flex flex-col col-span-12 lg:col-span-6 p-8 bg-cover bg-center relative"
+          className="flex flex-col col-span-12 lg:col-span-6 px-4 py-8 bg-cover bg-center relative"
           style={{
             backgroundImage: `url('/images/hospital.webp')`,
           }}
@@ -37,7 +37,7 @@ const Cases = () => {
           </div>
         </div>
         <div
-          className="flex flex-col col-span-12 lg:col-span-6 p-8 bg-cover bg-center relative"
+          className="flex flex-col col-span-12 lg:col-span-6 px-4 py-8 bg-cover bg-center relative"
           style={{
             backgroundImage: `url('/images/cmj.webp')`,
           }}

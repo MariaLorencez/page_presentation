@@ -3,7 +3,7 @@ import React from "react";
 
 const CDS = () => {
   return (
-    <div className="flex justify-center p-12 bg-gradient-to-r to-primary-100 from-secondary-100">
+    <div className="flex justify-center px-4 py-12 bg-gradient-to-r to-primary-100 from-secondary-100">
       <div className="container max-w-4xl flex flex-col gap-8 py-8 bg-white shadow-lg rounded-lg">
         <section className="p-8">
           <p className="text-3xl font-extrabold text-center mb-6">¿Qué es el CDS?</p>
@@ -15,7 +15,7 @@ const CDS = () => {
               <span className="font-semibold">CD:</span> es la mezcla por partes iguales de clorito de sodio (NACLO2) activado con ácido clorhídrico (HCl)
             </p>
             <p className="text-lg">
-              <span className="font-semibold">CDS:</span> es el gas del CD o Dioxido de cloro (ClO2) disuelto en agua
+              <span className="font-semibold">CDS:</span> es el gas del CD o Dióxido de cloro (ClO2) disuelto en agua
             </p>
           </div>
         </section>

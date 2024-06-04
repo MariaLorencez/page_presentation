@@ -17,10 +17,10 @@ const ChlorineDioxide = () => {
             width={1000}
           />
         </div>
-        <div className="flex flex-col col-span-12 lg:col-span-6 text-center p-8">
+        <div className="flex flex-col col-span-12 lg:col-span-6 text-center px-4 py-8 md:p-8">
           <HoverGrowUnderline underlineColor="bg-primary">
             <p className="text-3xl font-medium text-white mb-6">
-              Dióxido de Cloro como soporte para vencer el Covid-19.
+              Dióxido de cloro como soporte para vencer el Covid-19.
             </p>
           </HoverGrowUnderline>
           <p className="text-xl text-white mb-6">
